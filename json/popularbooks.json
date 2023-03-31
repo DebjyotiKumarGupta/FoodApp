@@ -1,0 +1,32 @@
+ [
+        {
+            "book": "1984",
+            "author": "George Orwell",
+            "image": "img/1984.png",
+            "date_published": "June 8, 1949"
+        },
+        {
+            "book": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "image": "img/1984.png",
+            "date_published": "April 10, 1925"
+        },
+        {
+            "book": "The Catcher in the Rye",
+            "author": "J.D. Salinger",
+            "image": "img/1984.png",
+            "date_published": "July 16, 1951"
+        },
+        {
+            "book": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "image": "img/1984.png",
+            "date_published": "January 28, 1813"
+        },
+        {
+            "book": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "image": "img/1984.png",
+            "date_published": "July 11, 1960"
+        }
+    ]
