@@ -1,151 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Pages/Product_overview/product_overview.dart';
 import 'package:my_app/main.dart';
+import 'Single.dart';
+import './Drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  Widget signalProducts() {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      height: 250,
-      width: 180,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+  Widget ListTitle({required IconData icon, required String title}) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        size: 32,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Image(image: AssetImage('Assets/basil.png')),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Fresh Basil",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                  Text(
-                    '50\$/50 Gram',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          padding: EdgeInsets.only(left: 4),
-                          height: 30,
-                          width: 10,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                              // color: Colors.red,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Row(children: [
-                            Expanded(
-                              child: Text(
-                                '50 Gram',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Icon(Icons.arrow_drop_down,
-                                  size: 20, color: Colors.yellow),
-                            ),
-                          ]),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 30,
-                          width: 10,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                              // color: Colors.black,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Icon(
-                                  Icons.remove,
-                                  size: 20,
-                                  color: Colors.amber,
-                                ),
-                                Text(
-                                  '1',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.yellow[800]),
-                                ),
-                                Icon(
-                                  Icons.add,
-                                  size: 20,
-                                  color: Colors.amber,
-                                ),
-                              ]),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // Row(
-                  //   children: [
-                  //     Expanded(
-                  //       child: Container(
-                  //         height: 30,
-                  //         width: 120,
-                  //         child: OutlinedButton(
-                  //           onPressed: () {},
-                  //           child: Row(
-                  //             children: [
-                  //               Expanded(child: Text('50 Gram')),
-                  //               Expanded(
-                  //                 child: Icon(Icons.arrow_drop_down,
-                  //                     size: 20,
-                  //                     color: Colors.yellow),
-                  //               ),
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //     Expanded(
-                  //       child: Container(
-                  //         height: 30,
-                  //         width: 120,
-                  //         child: OutlinedButton(
-                  //           onPressed: () {},
-                  //           child: Row(
-                  //             children: [
-                  //               Text('50 Gram'),
-                  //               Icon(Icons.arrow_drop_down,
-                  //                   size: 20, color: Colors.yellow),
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                ],
-              ),
-            ),
-          ),
-        ],
+      title: Text(
+        title,
+        style: TextStyle(color: Colors.black),
       ),
     );
   }
@@ -154,7 +24,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.yellow,
+        child: Draw(),
+      ),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         title: Text(
@@ -304,12 +177,44 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {
+                        // Navigator.of(context).push(MaterialPageRoute(
+                        //     builder: (context) => Product_overview()));
+
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) => const Product_Overview()),
+                        // );
+                      },
+                    ),
+                    signalProducts(
+                        productImage:
+                            'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                        productName: 'Fresh Basil',
+                        onTap: () {}),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
                   ],
                 ),
               ),
@@ -337,12 +242,90 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
-                    signalProducts(),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Root Vegatables",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "View All",
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
+                    signalProducts(
+                      productImage:
+                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                      productName: 'Fresh Basil',
+                      onTap: () {},
+                    ),
                   ],
                 ),
               ),
