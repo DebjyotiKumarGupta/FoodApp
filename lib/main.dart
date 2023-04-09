@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Pages/HomePage.dart';
 import 'package:my_app/Pages/Product_overview/product_overview.dart';
 import 'package:my_app/Pages/colors.dart';
 import 'package:my_app/auth/signin.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: scaffoldBackgroundColor,
       ),
       debugShowCheckedModeBanner: false,
-      home: Product_Overview(),
+      home: HomeScreen(),
     );
   }
 }

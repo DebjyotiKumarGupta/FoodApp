@@ -181,39 +181,39 @@ class HomeScreen extends StatelessWidget {
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {
-                        // Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (context) => Product_overview()));
-
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const Product_Overview()),
-                        // );
+                      tap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => Product_Overview(
+                                    productName: 'Fresh Basil',
+                                    productImage:
+                                        'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
+                                  )),
+                        );
                       },
                     ),
                     signalProducts(
                         productImage:
                             'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                         productName: 'Fresh Basil',
-                        onTap: () {}),
+                        tap: () {}),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                   ],
                 ),
@@ -246,31 +246,31 @@ class HomeScreen extends StatelessWidget {
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                   ],
                 ),
@@ -300,31 +300,31 @@ class HomeScreen extends StatelessWidget {
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                     signalProducts(
                       productImage:
                           'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png',
                       productName: 'Fresh Basil',
-                      onTap: () {},
+                      tap: () {},
                     ),
                   ],
                 ),

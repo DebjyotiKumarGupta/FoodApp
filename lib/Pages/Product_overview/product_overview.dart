@@ -4,8 +4,10 @@ import 'package:my_app/Pages/colors.dart';
 enum SinginCharacter { fill, outline }
 
 class Product_Overview extends StatefulWidget {
-  const Product_Overview({super.key});
-
+  final String productName;
+  final String productImage;
+  Product_Overview(
+      {super.key, required this.productName, required this.productImage});
   @override
   State<Product_Overview> createState() => _Product_OverviewState();
 }
@@ -81,15 +83,16 @@ class _Product_OverviewState extends State<Product_Overview> {
               child: Column(
                 children: [
                   ListTile(
-                    title: Text("Fresh Basil"),
+                    title: Text(
+                      widget.productName ?? "",
+                    ),
                     subtitle: Text("\$50"),
                   ),
                   Container(
                       // color: Colors.red,
                       height: 250,
                       padding: EdgeInsets.all(40),
-                      child: Image.network(
-                          'https://assets.stickpng.com/images/58bf1e2ae443f41d77c734ab.png')),
+                      child: Image.network(widget.productImage ?? "")),
                   Container(
                     width: double.infinity,
                     // color: Colors.red,
@@ -109,16 +112,49 @@ class _Product_OverviewState extends State<Product_Overview> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CircleAvatar(
-                          radius: 3,
-                          backgroundColor: Colors.green,
+                        Row(
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 3,
+                              backgroundColor: Colors.green,
+                            ),
+                            Radio(
+                              value: SinginCharacter.fill,
+                              activeColor: Colors.green[700],
+                              onChanged: (value) {
+                                setState(() {
+                                  _character = value!;
+                                });
+                              },
+                              groupValue: _character,
+                            ),
+                          ],
                         ),
-                        Radio(
-                          value: SinginCharacter.fill,
-                          activeColor: Colors.green[700],
-                          onChanged: (value) {},
-                          groupValue: _character,
-                        )
+                        Text("\$50"),
+                        Container(
+                          // color: Colors.red,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 30,
+                            vertical: 10,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            border: Border.all(color: Colors.grey),
+                            // color: primaryColor,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.add,
+                              ),
+                              Text(
+                                "ADD",
+                                style: TextStyle(color: Colors.red),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -126,6 +162,36 @@ class _Product_OverviewState extends State<Product_Overview> {
               ),
             ),
           ),
+          Expanded(
+              child: Container(
+            padding: EdgeInsets.all(20),
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Text(
+                    "About This Product",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Basil is a fragrant herb with a distinctive flavor that many people enjoy. The various types have different flavors. In cooking, sweet basil is the most popular variety in the U.S., but people also use lemon basil, clove basil, cinnamon basil, and other types.",
+                  style: TextStyle(
+                    fontSize: 16,
+                    // fontWeight: FontWeight.w600,
+                    color: textColor,
+                  ),
+                ),
+              ],
+            ),
+          )),
         ],
       ),
     );

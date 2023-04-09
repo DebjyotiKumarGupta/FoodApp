@@ -2,15 +2,20 @@ import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 
-class signalProducts extends StatelessWidget {
+class signalProducts extends StatefulWidget {
   final String productImage;
   final String productName;
-  final Function onTap;
+  final Function tap;
   signalProducts(
       {required this.productImage,
       required this.productName,
-      required this.onTap});
+      required this.tap});
 
+  @override
+  State<signalProducts> createState() => _signalProductsState();
+}
+
+class _signalProductsState extends State<signalProducts> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,17 +30,19 @@ class signalProducts extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
-            onTap: onTap(),
-            child: Expanded(flex: 2, child: Image.network(productImage)),
+            onTap: () {
+              widget.tap();
+            },
+            child: Expanded(flex: 2, child: Image.network(widget.productImage)),
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    productName,
+                    widget.productName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
