@@ -1,16 +1,20 @@
-# my_app
+#FoodApp
 
-A new Flutter project.
 
-## Getting Started
+Description
+FoodApp is a  mobile application designed to help users discover, order, and review their favorite dishes from local restaurants.
 
-This project is a starting point for a Flutter application.
+Features
+ Restaurant search and discovery, Online ordering, User reviews and ratings, User profiles, etc.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Launch the app on your mobile device.
+Sign in or create an account.
+Browse nearby restaurants and their menus.
+Place food orders and make payments.
+Leave reviews and ratings for dishes and restaurants.
+
+
+Technologies Used
+Flutter , Dart , Firebase , Google MAps
